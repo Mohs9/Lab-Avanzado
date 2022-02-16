@@ -1,0 +1,353 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Algunos Paquetes Necesarios 
+\usepackage{fancyhdr, graphicx, wrapfig,lipsum}
+\usepackage[utf8]{inputenc}% Language
+\usepackage{pgf,tikz,pgfplots}
+\usepackage[spanish]{babel}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry} % Margins														
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{longtable} % Table accross multiple pages
+\usepackage{hyperref}  % Use Hyperlinks
+\usepackage{enumitem} % Reduce space in enumerate
+\usepackage{txfonts}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{fancybox}
+\usepackage[pangram]{blindtext}
+\usepackage{tcolorbox}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{verbatim} 
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0,0,1}
+\definecolor{backcolour}{rgb}{0.9,0.9,0.9}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{blue!7},   
+	commentstyle=\color{codegray},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegreen},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+
+
+\begin{document}
+	
+	\newcommand{\myDoc}{Tarea 1.II.2}
+	\newcommand{\myDate}{Primer semestre 2022}
+	\newcommand{\myCourse}{Laboratorio Avanzado}
+	\newcommand{\myName}{Rubí Esmeralda Ramírez Milián}
+	\newcommand{\myCarnet}{201804565}
+	\newcommand{\degre}{\ensuremath{^\circ}}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\F}{\mathbf{F}}
+	\newcommand{\vi}{\mathbf{\hat{i}}}
+	\newcommand{\vj}{\mathbf{\hat{j}}}
+	\newcommand{\vk}{\mathbf{\hat{k}}}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Fancyboxes
+	
+	
+	\newcounter{problem}[section]\setcounter{problem}{0}
+	\renewcommand{\theproblem}{%\arabic{section}.
+		\arabic{problem}}
+	
+	\newenvironment{problem}[1][]{%
+		\refstepcounter{problem}
+		
+		\ifstrempty{#1}%
+		% if condition (without title)
+		{\mdfsetup{%
+				frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=purple!20]
+					{\strut Inciso~\theproblem};}
+			}%
+			% else condition (with title)
+		}{\mdfsetup{%
+				frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=purple!20]
+					{\strut Inciso~\theproblem:~#1};}%
+			}%
+		}%
+		% Both conditions
+		\mdfsetup{%
+			innertopmargin=10pt,linecolor=pink!40,%
+			linewidth=2pt,topline=true,%
+			frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+		}
+		\begin{mdframed}[]\relax%
+			\label{#1}}{\end{mdframed}}
+	
+	
+	\newcounter{solution}[section]\setcounter{solution}{0}
+	\renewcommand{\thesolution}{%\arabic{section}.
+		\arabic{solution}}
+	\newenvironment{solution}[2][]{%
+		\refstepcounter{solution}%
+		\ifstrempty{#1}%
+		{\mdfsetup{%
+				frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=green!20]
+					{\strut Soluci\'on~\thesolution};}}
+		}%
+		{\mdfsetup{%
+				frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=green!20]
+					{\strut Soluci\'on	~\thesolution:~#1};}}%
+		}%
+		\mdfsetup{innertopmargin=10pt,linecolor=green!20,%
+			linewidth=2pt,topline=true,%
+			frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+		}
+		\begin{mdframed}[]\relax%
+			\label{#2}}{\end{mdframed}}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - BEGIN
+	\newtheoremstyle{Tema}% name of the style to be used
+	{5mm}% measure of space to leave above the theorem. E.g.: 3pt
+	{3mm}% measure of space to leave below the theorem. E.g.: 3pt
+	{}% name of font to use in the body of the theorem
+	{}% measure of space to indent
+	{\bfseries}% name of head font
+	{\newline}% punctuation between head and body
+	{20mm}% space after theorem head
+	{}% Manually specify head
+	
+	\theoremstyle{Tema} \newtheorem{Tema}{Tema} %%%%% Template para Temas
+	\theoremstyle{Tema} \newtheorem{serie}{Serie}              %%%%%  Template para Series de ejercicios
+	\theoremstyle{Tema} \newtheorem{ejercicio}{Ejercicio}    %%%%%  Template para Ejercicios
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - END
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - BEGIN %%%%%%%%%%
+	\fancypagestyle{firststyle}
+	{
+		\renewcommand{\headrulewidth}{1pt}
+		\fancyhead[R]{
+			\textbf{Universidad de San Carlos de Guatemala} \\
+			\textbf{Escuela de Ciencias F\'isicas y Matem\'aticas}\\
+			\textbf{\myName}\\
+			\textbf{\myCourse }\\
+			\textbf{\myCarnet}    %%%%%%%%%% Agregar nombre del curso 
+			%%%%%%%%%%%%%%%%%%%%%% Agregar fecha en formato: Enero 15, 2015
+		}
+		\fancyhead[L]{ 
+			%\includegraphics[height=1.6 cm, width=5.5 cm]{LogoColor}  
+		}
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - END %%%%%%%%%%
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - BEGIN %%%
+	\fancypagestyle{allStyle}
+	{
+		\renewcommand{\headrulewidth}{1 pt}
+		\fancyhead[R]{
+			\emph{\myDoc $-$ \myCourse} %%%% Modificar n\'umero de examen parcial y nombre del curso
+		}
+		\fancyhead[L]{}  
+		\fancyfoot[C]{}
+		\fancyfoot[R]{\thepage}
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - END %%%
+	
+	\date{}
+	\setlength{\headheight}{0.65 in} % fixes \headheight warning
+	%%%%%%%%%%%%%%%%%%%%%%%% BEGIN%%%%%%%%%%%%%%
+	
+	\pagestyle{allStyle}
+	
+	\thispagestyle{firststyle}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titulo - BEGIN
+	\begin{center}
+		\LARGE
+		\textsc{\myDoc}\\\normalsize % Modificar el N\'umero del examen parcial
+		\medskip
+		\hrule height 1pt
+	\end{center}
+	
+	
+	%	\section*{Instrucciones:}Resuelva esta tarea en su cuaderno u hojas dejando constancia de sus procedimientos. Sus respuestas deben estar escritas y encerradas en un cuadro a lapicero.
+	\begin{problem}
+	Modificar la clase persona añadiendo los siguiente métodos
+	de asignación (set)
+	\end{problem}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img}
+		\caption{Modificar el .hpp}
+		\label{fig:img}
+	\end{figure}
+
+Para cada método se verifica si tiene nombre, año, mes, día de nacimiento o lugar de origen, con un if y se le asigna el argumento que se le dio a la instancia si en dado caso ya tenía imprime que ya fue asignado.
+
+
+\begin{lstlisting}[language=c++]
+	int persona::Asignar_Nombre( std::string elNombre )
+	{
+		if( !Nombre )
+		{
+			Nombre = new std::string( elNombre );
+			return 0;
+		}
+		
+		std::cout << "El Nombre ya fue asignado" << std::endl;
+		return 1;
+	}
+	int persona::Asignar_FechaNacimiento(int Anio, int Mes, int Dia)
+	{
+		if( !Fecha_nacimiento )
+		{   
+			Fecha_nacimiento = new std::tm;
+			Fecha_nacimiento->tm_year =  Anio;
+			Fecha_nacimiento->tm_mon= Mes;
+			Fecha_nacimiento->tm_mday= Dia;
+			return 0;
+		}
+		
+		std::cout << "La fecha de nacimiento ya fue asignada" << std::endl;
+		return 1;
+	}
+	int persona::Asignar_LugarOrigen( std::string Lugar )
+	{
+		if( !Lugar_nacimiento )
+		{
+			Lugar_nacimiento = new std::string( Lugar );
+			return 0;
+		}
+		
+		std::cout << "El lugar de origen ya fue asignado" << std::endl;
+		return 1;
+	}
+	
+\end{lstlisting}
+
+
+
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img1}
+		\caption{Modificar el .cpp}
+		\label{fig:img1}
+	\end{figure}
+	
+	
+
+	\begin{problem}
+Modificar la clase persona añadiendo los siguiente métodos
+de obtención (get)
+	\end{problem}
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img2}
+	\caption{Modificar el .hpp}
+	\label{fig:img2}
+\end{figure}
+
+
+
+Luego para obtener	el nombre, año, mes, día y lugar de nacimiento se utiliza un if para verificar cada dato en su respectivo método y regresa el contenido de la localización de memoria a la que apunta. 
+
+ 
+	\begin{lstlisting}[language=c++]
+
+		std::string persona::Obtener_Nombre()
+		{
+			if(Nombre)
+			return *Nombre;
+			return "Nombre no asignado";
+		}
+		
+		
+		int persona::Obtener_Anio_Nacimiento(){
+			if (Fecha_nacimiento->tm_year)
+			return Fecha_nacimiento->tm_year;
+			
+			return 0;
+		}
+		
+		int persona::Obtener_Mes_Nacimiento(){
+			if (Fecha_nacimiento->tm_mon)
+			return Fecha_nacimiento->tm_mon;
+			
+			return 0;
+		}
+		
+		int persona::Obtener_Dia_Nacimiento(){
+			if (Fecha_nacimiento->tm_mday)
+			return Fecha_nacimiento->tm_mday;
+			
+			return 0;
+		}
+		
+		
+		
+		
+		
+		std::string persona::Obtener_Lugar_Origen( )
+		{
+			if( Lugar_nacimiento )
+			return *Lugar_nacimiento;
+			return "Lugar de origen no asignado";
+		}
+		
+	\end{lstlisting}
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img3}
+		\caption{Modificar el .cpp}
+		\label{fig:img3}
+	\end{figure}
+	
+	
+	Ahora se prueba los métodos en clase02.cpp se asigna fecha de nacimiento y nombre a la persona "Fulano". Luego se imprime en consola el nombre y edad de Fulano.
+	
+	
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{img4	}
+\caption{Modificar el .cpp}
+\label{fig:img4}
+\end{figure}
+
+
+	
+	%\bibliographystyle{ieeetr}% otras opciones {plain}
+	%\bibliography{referencias}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Instrucciones - BEGIN
+	
+	\vspace{0.1 in}
+	
+\end{document} %%%%%%%%%%%%%%%%%%%%%%%% BEGIN%%%%%%%%%%%%%%
