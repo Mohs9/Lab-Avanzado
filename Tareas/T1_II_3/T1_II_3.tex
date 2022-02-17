@@ -192,8 +192,116 @@
 		\hrule height 1pt
 	\end{center}
 	
-
+\begin{problem}
+	Utilizando la clase VecR2 como ejemplo, definir e implementar una	nueva clase llamada VecR3, que son vectores en $R^3$. Esta clase debe sobrecargar los siguientes operadores:
 	
+	\begin{itemize}
+		\item operator+ para suma de dos vectores.
+		\item  operator- para resta de dos vectores.
+		\item operator- para negación de un vector.
+		\item operator* para producto punto de dos vectores.
+		\item operator* para multiplicar un vector por un flotante.
+		\item operator/ para dividir un vector por un flotante.
+		\item operator $\%$ para producto cruz de dos vectores.
+		\item operator= para asignación.
+		\item operator== para compraración de igualdad entre vectores.
+		También se debe sobrecargar las siguientes funciones como amigas,		
+		\item operator* para multiplicar un flotante por un vector.
+		\item operator $\ll$ para desplegar el vector con cout.
+		
+ 	\end{itemize}
+		De la misma forma que en VecR2, se debe implementar un atributo estático que indique si al desplegar el vector, lo haga en forma cartesiana $(x, y, z)$ o esférica $(r, \theta, \phi )$.
+\end{problem}
+
+	Primero se debe hacer un archivo $ .hpp $ se encuentra en un repositorio, con el nombre \href{https://github.com/Mohs9/Lab-Avanzado/blob/eee254f75da3f1da0648a65ce5d045611bca5708/Tareas/T1_II_3/VecR3.hpp}{VecR3}
+	
+	
+	En la cual, se ponen los atributos privados las coordenadas del vector y en modo público secrean los constructores y el destructoy además de todos los métodos, los primero son los métodos <<set>> y de <<get>>. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img1}
+		\caption{privado y público}
+	\end{figure}
+	
+	
+	Y la sobre carga de operadores, el operador magnitud devuelva un flotante, el operador de suma, de resta debuelven un vector, el operador * es el produto punto por lo que devuelve un flotante y los operadores de producto cruz y de asignación devuelven un vector y el operador de comparación devuelve un entero.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img2}+
+		\caption{sobrecarga de operadores}
+	\end{figure}
+
+	Y las funciones amigas que tienen acceso a los
+	elementos privados en este caso a las coordenadas.
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img3}
+		\caption{funciones amigas}
+	\end{figure}
+	
+	Ahora se hace el archivo .cpp que se encuentra con el nombre \href{https://github.com/Mohs9/Lab-Avanzado/blob/eee254f75da3f1da0648a65ce5d045611bca5708/Tareas/T1_II_3/VecR3.cpp}{VecR3.cpp}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img4}
+		\caption{definir los primeros métodos. }
+	\end{figure}
+	
+	
+	
+	Luego para la magnitd se utiliza la librería <<cmath>> para utilizar <<sqrt>>, Para sumar y restar vectores se debe utilizar dos vectores, uno de los vectores a restar o sumar es el que llama el operador, por lo que se accede a el por el puntero "this". El otro es el que se pasa como argumento. Como se esta dentro de las definiciones de clase, se puede acceder a los atributos privados.
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img5}
+		\caption{magnitud, operador suma y resta. }
+	\end{figure}
+
+	El operador del	producto interno también requiere dos vectores también pero devuelve un flotante. Y se multiplica coordenada a coordenada. Y el producto punto también utiliza el puntero this y se define coordenada a coordenada. Y el vector de asignación llama a otro vector y le asigna sus coordenadas al vector que lo llamó.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img6}
+		\caption{producto punto y producto cruz. }
+	\end{figure}
+	
+	El operador de comparación analiza las coordenadas de ambos vectores y retorna un cero si son guales y uno si no son iguales, e imprime si son iguales o no.  El método de Mostrar\_Esfericas cambia el valor del flag "Esfericas". Y ostream pueden escribir secuencias de caracteres y representar otros tipos de datos. Se proporcionan miembros específicos para realizar estas operaciones de salida. Si el flag Esfericas es true el método Mostrar\_Esfericas muestra al vector en coordenadas esféricas.
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img7}
+		\caption{Otros operadores. }
+	\end{figure}
+
+Y por últimos se utiliza las funciones amigas que reciben un escalar y devuelven un vector, pueden acceder a los atributos privados.
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img8}
+	\caption{de nuevo funciones amigas. }
+\end{figure}
+
+Se comprueba el uso de estos operadores en otro archivo \href{https://github.com/Mohs9/Lab-Avanzado/blob/eee254f75da3f1da0648a65ce5d045611bca5708/Tareas/T1_II_3/prueba.cpp}{Prueba.cpp}, crean dos vecores y se imprime en consola las salidas de cada operador.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img9}
+	\caption{comprobación del funcioamiento de los operadores. }
+\end{figure}
+
+
+
+
+
+
 	
 	%\bibliographystyle{ieeetr}% otras opciones {plain}
 	%\bibliography{referencias}

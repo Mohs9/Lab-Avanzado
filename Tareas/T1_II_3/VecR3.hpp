@@ -49,9 +49,6 @@ public:
     /* Asigna las coordenadas x, y */
     void Asignar_xyz( float valor_x, float valor_y, float valor_z );
 
-
-
-
     /* Metodos de obtencion (get methods)
      * El calificador const al final del prototipo
      * indica que estos metodos no van a alterar
@@ -104,7 +101,7 @@ public:
     friend std::ostream &operator<<( std::ostream &, const VecR3 & );
     /* Multiplica un flotante por un vector */
     friend VecR3 operator*( const float &, const VecR3 & );
-      /* Calcula la división de un vector por un escalar */
+    /* Calcula la división de un vector por un escalar */
     friend VecR3 operator/( const float &,  const VecR3 & );
 
 };

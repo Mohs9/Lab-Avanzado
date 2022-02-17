@@ -12,29 +12,24 @@
 #include "VecR3.hpp"
 
 bool VecR3::Esfericas = false;
-
 VecR3::VecR3( )
 {
     Xcor = 0;
     Ycor = 0;
     Zcor=  0;
 }
-
 VecR3::VecR3( float valor_x, float valor_y, float valor_z )
 {
     Xcor = valor_x;
     Ycor = valor_y;
     Zcor = valor_z;
 }
-
 VecR3::~VecR3()
 {}
-
 void VecR3::Asignar_x( float valor_x )
 {
     Xcor = valor_x;
 }
-
 void VecR3::Asignar_y( float valor_y )
 {
     Ycor = valor_y;
@@ -43,26 +38,20 @@ void VecR3::Asignar_z( float valor_z )
 {
     Zcor = valor_z;
 }
-
-
 void VecR3::Asignar_xyz( float valor_x, float valor_y, float valor_z )
 {
     Xcor = valor_x;
     Ycor = valor_y;
     Zcor = valor_z;
 }
-
-
 float VecR3::Obtener_x( ) const
 {
     return Xcor;
 }
-
 float VecR3::Obtener_y( ) const
 {
     return Ycor;
 }
-
 float VecR3::Obtener_z( ) const
 {
     return Zcor;
@@ -188,7 +177,7 @@ std::ostream &operator<<( std::ostream &salida, const VecR3 &avec )
          * se obtiene del metodo ya implementado */
         float theta = std::atan2( avec.Ycor , avec.Xcor );
         float phi=  std::atan2(sqrt(avec.Ycor*avec.Ycor + avec.Xcor*avec.Xcor),avec.Zcor);
-        salida << "( " << avec.Magnitud() << " < " << theta <<"<" << phi<<" )";
+        salida << "( " << avec.Magnitud() << " < " << theta <<" < " << phi<<" )";
     }
     else
         salida << "( " << avec.Xcor << ", " << avec.Ycor <<", " << avec.Zcor << " )";

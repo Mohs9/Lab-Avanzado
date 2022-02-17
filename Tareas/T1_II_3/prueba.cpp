@@ -23,7 +23,18 @@ int main()
     VecR3 K(1,2,3);
     VecR3 Q(2,3,4);
 
+    Q.Mostar_Esfericas(false);
     
- Q.operator==(K);
+    
+    std::cout <<  Q.operator+(K) << std::endl;
+    std::cout <<  Q.operator-(K) << std::endl;
+    std::cout <<  Q.operator*(K) << std::endl;
+    std::cout <<  Q.operator%(K) << std::endl;
+    std::cout <<  operator*(2,K) << std::endl;
+    std::cout <<  operator/(2,K) << std::endl;
+    Q.Mostar_Esfericas(true);
+    Q.operator==(K);
+    std::cout <<  Q.operator=(K) << std::endl;
+    
     return 0;
 }
