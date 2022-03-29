@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "/home/rubilin/Documents/Rubi5to./9Semestre/Lab_Avanzado/Lab-Avanzado/Tareas/T1_II_3/include/VecR3.hpp"
+#include "VecR3.hpp"
 
 bool VecR3::Esfericas = false;
 VecR3::VecR3( )

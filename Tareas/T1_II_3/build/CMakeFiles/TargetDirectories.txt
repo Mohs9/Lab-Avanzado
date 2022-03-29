@@ -1,0 +1,3 @@
+/home/rubilin/Documents/Rubi5to./9Semestre/Lab_Avanzado/Lab-Avanzado/Tareas/T1_II_3/build/CMakeFiles/main.dir
+/home/rubilin/Documents/Rubi5to./9Semestre/Lab_Avanzado/Lab-Avanzado/Tareas/T1_II_3/build/CMakeFiles/edit_cache.dir
+/home/rubilin/Documents/Rubi5to./9Semestre/Lab_Avanzado/Lab-Avanzado/Tareas/T1_II_3/build/CMakeFiles/rebuild_cache.dir
