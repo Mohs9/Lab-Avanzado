@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.20)  29 MAR 2022 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.20)  8 APR 2022 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2513,32 +2513,32 @@ s been already used, duplicate ignored
                                                   
 l.252 	
         <./img1.png>]
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26
-7.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 27
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 2
-67.
+71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 2
-67.
+71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 2
-67.
+71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 2
-67.
+71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
@@ -2546,7 +2546,7 @@ File: utxsyc.fd 2000/12/15 v3.1
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.267 \end{document}
+l.271 \end{document}
                      %%%%%%%%%%%%%%%%%%%%%%%% BEGIN%%%%%%%%%%%%%% <./img2.png>]
 (./T1.III.3.aux
 LaTeX Info: Redefining \. on input line 26.
@@ -2556,10 +2556,10 @@ Package rerunfilecheck Info: File `T1.III.3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38155 strings out of 478862
- 844983 string characters out of 5858944
+ 38156 strings out of 478862
+ 845001 string characters out of 5858944
  1649140 words of memory out of 6000000
- 55117 multiletter control sequences out of 15000+600000
+ 55118 multiletter control sequences out of 15000+600000
  423947 words of font info for 77 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  69i,14n,75p,731b,1247s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2570,10 +2570,10 @@ e/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist
 onts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on T1.III.3.pdf (2 pages, 79227 bytes).
+Output written on T1.III.3.pdf (2 pages, 79711 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  34 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
